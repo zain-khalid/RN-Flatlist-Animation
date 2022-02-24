@@ -1,5 +1,5 @@
 import React from 'react';
-import { NativeBaseProvider, extendTheme, Box } from 'native-base';
+import { NativeBaseProvider, extendTheme, Box, Container } from 'native-base';
 import { List } from './src/components';
 
 export default function App() {
@@ -21,16 +21,12 @@ export default function App() {
 			amber: {
 				400: '#d97706',
 			},
-		},
-		config: {
-			// Changing initialColorMode to 'dark'
-			initialColorMode: 'dark',
-		},
+		}
 	});
 	
 	return (
 		<NativeBaseProvider theme={theme}>
-			<Box safeArea>
+			<Box safeArea alignItems="center" flex={1}>
 				<List />
 			</Box>
 		</NativeBaseProvider>
