@@ -7,6 +7,7 @@ export default function App() {
 		colors: {
 			// Add new color
 			primary: {
+				0: '#FFFFFF',
 				50: '#F1F1F1',
 				100: '#F2F2F2',
 				200: '#F3F3F3',
@@ -26,7 +27,7 @@ export default function App() {
 	
 	return (
 		<NativeBaseProvider theme={theme}>
-			<Box safeArea alignItems="center" flex={1}>
+			<Box alignItems="center" flex={1}>
 				<List />
 			</Box>
 		</NativeBaseProvider>
