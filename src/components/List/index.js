@@ -20,14 +20,20 @@ const List = () => {
 
 	const scrollx = React.useRef(new Animated.Value(0)).current;
 
-	const [movies, setMovies] = React.useState(DATA.slice(0, 10));
+	const [movies, setMovies] = React.useState([{title:'left-spacer'}, ...DATA.slice(0, 10), {title:'right-spacer'}]);
 
 	const Item = ({item, index}) => {
 
+		if (!item.info) {
+			return (
+				<View style={{width: EMPTY_ITEM_SIZE}} />
+			);
+		}
+
 		const inputRange = [
+			( index - 2 ) * ITEM_SIZE,
 			( index - 1 ) * ITEM_SIZE,
 			index * ITEM_SIZE,
-			( index + 1 ) * ITEM_SIZE
 		];
 		const translateY = scrollx.interpolate({
 			inputRange,
